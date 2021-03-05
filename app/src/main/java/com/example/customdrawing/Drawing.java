@@ -3,7 +3,6 @@ package com.example.customdrawing;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -46,13 +45,12 @@ public class Drawing extends AppCompatActivity {
             }
         });
 
-        Button home = (Button) findViewById(R.id.button2);
+        Button home = (Button) findViewById(R.id.homeBtn);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Drawing.this, MainActivity.class);
                 startActivity(intent);
-                finish ();
             }
         });
     }

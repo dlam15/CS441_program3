@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 Intent intent = new Intent(MainActivity.this, Drawing.class);
                 intent.putExtra("COLOR", choice);
                 startActivity(intent);
-                finish ();
             }
         });
 

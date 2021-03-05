@@ -240,7 +240,7 @@ public class Flower extends SurfaceView implements SurfaceHolder.Callback {
         surfaceHolder = getHolder();
         Canvas canvas = surfaceHolder.lockCanvas();
         Paint surfaceBackground = new Paint();
-        surfaceBackground.setColor(Color.WHITE);
+        surfaceBackground.setColor(Color.BLACK);
         canvas.drawRect(0,0, this.getWidth(),this.getHeight(),surfaceBackground);
 
 
