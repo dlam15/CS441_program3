@@ -11,14 +11,21 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 
 public class Drawing extends AppCompatActivity {
+    private int choice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawing);
 
+
+        Bundle extras = getIntent().getExtras();
+        if(extras != null){
+            choice = extras.getInt("COLOR");
+        }
+
         LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout);
-        Flower flower = new Flower(getApplicationContext(), Color.RED);
+        Flower flower = new Flower(getApplicationContext(), choice);
         layout.addView(flower);
 
         SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar2);

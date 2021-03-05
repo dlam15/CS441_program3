@@ -221,6 +221,8 @@ public class Flower extends SurfaceView implements SurfaceHolder.Callback {
         petals.setColor(color);
         stem.setColor(0xFF0C8A2C);
 
+
+
     }
     @Override
     public void surfaceCreated(SurfaceHolder surfaceHolder){}

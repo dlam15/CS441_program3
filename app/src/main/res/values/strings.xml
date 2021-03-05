@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">CustomDrawing</string>
+    <string-array name="colors">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Pink</item>
+        <item>Yellow</item>
+        <item>Purple</item>
+        <item>Orange</item>
+        <item>Cyan</item>
+    </string-array>
 </resources>
