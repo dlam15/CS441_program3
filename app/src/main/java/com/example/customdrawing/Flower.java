@@ -12,7 +12,8 @@ public class Flower extends SurfaceView implements SurfaceHolder.Callback {
     public SurfaceHolder surfaceHolder = null;
     private Paint petals = null;
     private Paint stem = null;
-    private int[][] flower = {{530,700,7},{535,695,7},{537,693,7},{539,690,7},{540,685,7},{541,683,8},{543,680,8},{544,677,8},{545,674,8},{548,672,8}, //center petal (increase from right side)
+    private int[][] flower = // These are all the coordinates that generates the flower
+            {{530,700,7},{535,695,7},{537,693,7},{539,690,7},{540,685,7},{541,683,8},{543,680,8},{544,677,8},{545,674,8},{548,672,8}, //center petal (increase from right side)
             {550,670,8},{552,666,8},{554,662,8},{555,659,9},{557,655,9},{560,651,9},{561,647,9},{562,643,9},{564,640,9},{567,637,9},
             {569,633,9},{571,631,9},{574,629,9},{577,626,9},{579,623,10},{581,620,10},{583,618,10},{584,615,10},{586,613,10},{588,610,10},
             {590,607,10},{591,604,10},{592,600,10},{593,597,10},{594,594,10},{595,591,10},{596,588,10},{597,586,10},{598,583,10},{600,581,10},
@@ -81,7 +82,7 @@ public class Flower extends SurfaceView implements SurfaceHolder.Callback {
             {412,713,7},{410,714,7},{407,715,7},{404,715,7},{401,716,7},{399,716,7},{396,716,7},{394,716,7},{392,716,7},{389,715,6},
             {386,713,6},{382,712,6},{380,712,6},{377,712,6},{374,712,6},{371,712,6},{368,712,5},{365,712,5},{362,710,5},{360,710,5},
             {357,710,4},{354,710,4},{352,710,4},{349,710,4},{345,710,4},{341,708,3},{338,708,3},{335,708,3},{333,706,3},{331,706,3},
-            {328,706,2},{326,705,2},{325,704,2},{324,703,2},{323,702,1},{322,701,1},{321,700,1},{320,700,1},{319,699,1},{318,699,1}, //7*10
+            {328,706,2},{326,705,2},{325,704,2},{324,703,2},{323,702,1},{322,701,1},{321,700,1},{320,700,1},{319,699,1},{318,699,1}, //8*10
 
             {548,695,7},{551,691,7},{556,687,7},{558,682,7},{562,678,7},{564,675,8},{568,671,8},{570,667,8},{573,664,8},{576,662,8}, //right top petal
             {579,661,8},{582,660,8},{584,659,8},{586,657,8},{589,656,8},{593,655,8},{597,653,9},{600,652,9},{603,652,9},{605,651,9},
@@ -211,7 +212,7 @@ public class Flower extends SurfaceView implements SurfaceHolder.Callback {
             {584,1283,9},{581,1286,9},{577,1288,9},{573,1290,8},{569,1292,8},{566,1294,8},{562,1295,7},{559,1297,7},{555,1299,7},{551,1301,7},
             {548,1303,7},{544,1305,6},{540,1307,6},{536,1309,6},{532,1311,6},{529,1313,6},{525,1315,5},{521,1317,5},{518,1319,5},{515,1321,5} //20*10
 
-            //total = (20+7+32+7+30+8+21+7+24+10+20)*10 = 1860
+            //total = (20+7+32+8+30+8+21+7+24+10+20)*10 = 1870
     };
 
     public Flower(Context context, int color){
@@ -219,7 +220,7 @@ public class Flower extends SurfaceView implements SurfaceHolder.Callback {
         petals = new Paint();
         stem = new Paint();
         petals.setColor(color);
-        stem.setColor(0xFF0C8A2C);
+        stem.setColor(0xFF0C8A2C); //green
 
 
 
@@ -245,7 +246,7 @@ public class Flower extends SurfaceView implements SurfaceHolder.Callback {
 
 
         for (int num = 0; num<progress; num++) {
-            if(num<=1660) { //Use the color chosen by the user
+            if(num<1670) { //Use the color chosen by the user
                 canvas.drawCircle(flower[num][0]+20, flower[num][1]-100, flower[num][2], petals); //numbers used to adjust picture to center of drawing area
             }else{ //Make the stem green
                 canvas.drawCircle(flower[num][0]+20,flower[num][1]-100,flower[num][2], stem);
