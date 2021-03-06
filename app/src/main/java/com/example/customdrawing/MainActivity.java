@@ -13,7 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    private int[] possible = {Color.RED, Color.BLUE, Color.MAGENTA, 0xFFEDE904, 0xFF8240BA, 0xFFEA6C0C, Color.CYAN,};
+    private int[] possible = {Color.RED, Color.BLUE, Color.MAGENTA, 0xFFEDE904 /*Yellow*/, 0xFF8240BA/*Purple*/, 0xFFEA6C0C/*Orange*/, Color.CYAN,};
     private int choice = Color.RED;
 
     @Override
@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
+        //https://developer.android.com/guide/topics/ui/controls/spinner
+        //https://stackoverflow.com/questions/9476665/how-to-change-spinner-text-size-and-text-color
         Spinner spinner = (Spinner) findViewById(R.id.colorPicker);
         spinner.setOnItemSelectedListener(this);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
